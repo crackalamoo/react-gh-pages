@@ -18,6 +18,8 @@ class App extends Component {
         </div>
       </div>)};
     this.loadTimerStart = Date.now();
+    console.log("Changes have taken effect");
+    console.log(this.loadTimerStart);
     this.showData = true;
     this.loading = true;
     this.formComplete = false;
