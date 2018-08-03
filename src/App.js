@@ -192,6 +192,7 @@ class App extends Component {
     this.loading = false;
     document.title = "Guest Checkout – " + companyName + " – Services";
     this.forceUpdate();
+    console.log("Total load time: ", (Date.now()-loadTimer)/1000, "seconds");
   }
 
   checkButtons() {
