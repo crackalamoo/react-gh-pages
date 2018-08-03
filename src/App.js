@@ -219,7 +219,7 @@ class App extends Component {
     // Bamangwato Socks: A92EE0
     // Definitely Not Poisoned Food: CBF798
     // Washington's Training Camp: C5542D
-    // Union Army: AD0BD4
+    // Union Army: OA95871
     let companyCode = "OA95871";
     let propDataArray = window.location.href.substr(1).split("&");
     if (propDataArray[0].startsWith("companyID")) {
@@ -239,6 +239,7 @@ class App extends Component {
           self.noCampaign(jsonData);
         } else {
           self.setData(jsonData);
+          console.log("Got JSON Data in", (Date.now() - self.loadTimerStart)/1000, "seconds");
         }
       })
       .catch(function(err) {
@@ -249,7 +250,7 @@ class App extends Component {
 
   componentDidMount() {
     console.log("Mounted");
-    console.log("Initial loading time:", (Date.now() - this.loadTimerStart)/1000 + "seconds");
+    console.log("Initial loading time:", (Date.now() - this.loadTimerStart)/1000, "seconds");
     setInterval(this.checkButtons, 100);
   }
 
