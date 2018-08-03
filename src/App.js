@@ -6,7 +6,7 @@ import myService from './services.js';
 class App extends Component {
   constructor() {
     super();
-    var loadTimer = Date.now();
+    this.loadTimer = Date.now();
     this.companyData = {companyName: "Loading company...", imageLink: "",
       signupPolicy1: "I agree to sign up, and I have reviewed the ", signupPolicy2: " for further details",
       offerHTML: (<div>
@@ -192,7 +192,7 @@ class App extends Component {
     this.loading = false;
     document.title = "Guest Checkout – " + companyName + " – Services";
     this.forceUpdate();
-    console.log("Total load time: ", (Date.now()-loadTimer)/1000, "seconds");
+    console.log("Total load time: ", (Date.now()-this.loadTimer)/1000, "seconds");
   }
 
   checkButtons() {
@@ -248,7 +248,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log("Mounted:", (Date.now()-loadTimer)/1000, "seconds");
+    console.log("Mounted:", (Date.now()-this.loadTimer)/1000, "seconds");
     setInterval(this.checkButtons, 100);
   }
 
