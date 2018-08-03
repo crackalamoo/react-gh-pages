@@ -6,6 +6,7 @@ import myService from './services.js';
 class App extends Component {
   constructor() {
     super();
+    this.loadTimerStart = Date.now();
     this.companyData = {companyName: "Loading company...", imageLink: "",
       signupPolicy1: "I agree to sign up, and I have reviewed the ", signupPolicy2: " for further details",
       offerHTML: (<div>
