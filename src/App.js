@@ -18,7 +18,6 @@ class App extends Component {
         </div>
       </div>)};
     this.loadTimerStart = Date.now();
-    console.log("Changes have taken effect");
     console.log(this.loadTimerStart);
     this.showData = true;
     this.loading = true;
@@ -231,6 +230,7 @@ class App extends Component {
     }
     let url = "https://taptobook-qa.azurewebsites.net/api/version/3_1/ProviderAsync/GetHashCodeDetails?hashCode=" + companyCode + "&resetShowChat=true&updateAnalytics=true";
     let self = this;
+    console.log("Initial loading time:", (Date.now() - this.loadTimerStart)/1000 + "seconds");
     myService.getJsonData(url)
       .then(function(data) {
         let jsonData = JSON.parse(data);
