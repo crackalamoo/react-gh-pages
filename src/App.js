@@ -17,6 +17,7 @@ class App extends Component {
           </div>
         </div>
       </div>)};
+    this.loadTimerStart = Date.now();
     this.showData = true;
     this.loading = true;
     this.formComplete = false;
