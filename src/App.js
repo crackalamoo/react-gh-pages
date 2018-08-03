@@ -25,15 +25,15 @@ class App extends Component {
     this.errorHTML = (
       <div class="wholeScreen">
         <h2>We were unable to find the provider. Please check the url.</h2><br/>
-        <img class="bigPhone" src="http://taptobook-dev-guestcheckout.azurewebsites.net/content/images/booked-iphone.png?v=3.1" />
+        <img class="bigPhone" src="https://taptobook-dev-guestcheckout.azurewebsites.net/content/images/booked-iphone.png?v=3.1" />
         <h3>Discover and Book Last Minute Appointments!<br/>Download our App!</h3><br/>
         <div class="box">
           <a target="_blank" href="https://ttb.app.link/UMDypOUM8A?REFCODE=">
-            <img src="http://taptobook-dev-guestcheckout.azurewebsites.net/content/images/apple_download.png?v=3.1" />
+            <img src="https://taptobook-dev-guestcheckout.azurewebsites.net/content/images/apple_download.png?v=3.1" />
           </a>
           &nbsp;
           <a target="_blank" href="https://ttbdev.app.link/1WfnOOLT2B?REFCODE=">
-            <img src="http://taptobook-dev-guestcheckout.azurewebsites.net/content/images/google_download.png?v=3.1" />
+            <img src="https://taptobook-dev-guestcheckout.azurewebsites.net/content/images/google_download.png?v=3.1" />
           </a>
         </div>
       </div>
@@ -188,8 +188,7 @@ class App extends Component {
       signupPolicy1: data.SignupPolicyText, signupPolicy2: data.SignupPolicyTextPart2,
       offerHTML: offerHTML
       };
-    console.log("Set data");
-    console.log(this.companyData);
+    console.log("Got JSON Data in", (Date.now() - self.loadTimerStart)/1000, "seconds");
     this.loading = false;
     document.title = "Guest Checkout – " + companyName + " – Services";
     this.forceUpdate();
@@ -239,7 +238,6 @@ class App extends Component {
           self.noCampaign(jsonData);
         } else {
           self.setData(jsonData);
-          console.log("Got JSON Data in", (Date.now() - self.loadTimerStart)/1000, "seconds");
         }
       })
       .catch(function(err) {
