@@ -230,7 +230,6 @@ class App extends Component {
     }
     let url = "https://taptobook-qa.azurewebsites.net/api/version/3_1/ProviderAsync/GetHashCodeDetails?hashCode=" + companyCode + "&resetShowChat=true&updateAnalytics=true";
     let self = this;
-    console.log("Initial loading time:", (Date.now() - this.loadTimerStart)/1000 + "seconds");
     myService.getJsonData(url)
       .then(function(data) {
         let jsonData = JSON.parse(data);
@@ -250,6 +249,7 @@ class App extends Component {
 
   componentDidMount() {
     console.log("Mounted");
+    console.log("Initial loading time:", (Date.now() - this.loadTimerStart)/1000 + "seconds");
     setInterval(this.checkButtons, 100);
   }
 
